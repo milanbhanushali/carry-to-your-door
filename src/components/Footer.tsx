@@ -1,15 +1,18 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-brand-charcoal text-white">
+    <footer className="bg-brand-black text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Urban Wholesalers Ltd</h3>
+            <img 
+              src="/lovable-uploads/710d3246-75a5-472c-a7a6-83ddb96da13e.png" 
+              alt="Urban Wholesalers Logo" 
+              className="h-12 mb-4"
+            />
             <p className="text-gray-300 mb-4">Cash and carry at your door.</p>
             <p className="text-gray-300">Providing quality wholesale products to off-license stores across the UK.</p>
           </div>

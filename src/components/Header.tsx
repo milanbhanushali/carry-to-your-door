@@ -16,24 +16,28 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-brand-charcoal">URBAN WHOLESALERS LTD</span>
+            <img 
+              src="/lovable-uploads/2cd892e9-1795-47cd-a959-5ff00dcda8aa.png" 
+              alt="Urban Wholesalers Ltd" 
+              className="h-12"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-brand-charcoal hover:text-brand-teal transition-colors">
+            <Link to="/" className="text-brand-charcoal hover:text-brand-red transition-colors">
               Home
             </Link>
-            <Link to="/products" className="text-brand-charcoal hover:text-brand-teal transition-colors">
+            <Link to="/products" className="text-brand-charcoal hover:text-brand-red transition-colors">
               Products
             </Link>
-            <Link to="/order" className="text-brand-charcoal hover:text-brand-teal transition-colors">
+            <Link to="/order" className="text-brand-charcoal hover:text-brand-red transition-colors">
               Place Order
             </Link>
-            <Link to="/about" className="text-brand-charcoal hover:text-brand-teal transition-colors">
+            <Link to="/about" className="text-brand-charcoal hover:text-brand-red transition-colors">
               About Us
             </Link>
-            <Link to="/contact" className="text-brand-charcoal hover:text-brand-teal transition-colors">
+            <Link to="/contact" className="text-brand-charcoal hover:text-brand-red transition-colors">
               Contact
             </Link>
           </nav>
@@ -43,7 +47,7 @@ const Header = () => {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
             
-            <Button variant="default" className="ml-4 bg-brand-teal hover:bg-brand-teal/90">
+            <Button variant="default" className="ml-4 bg-brand-red hover:bg-brand-red/90">
               <ShoppingCart className="mr-2 h-4 w-4" /> Order Now
             </Button>
           </div>
@@ -56,35 +60,35 @@ const Header = () => {
           <div className="px-4 py-2 space-y-1">
             <Link 
               to="/" 
-              className="block px-3 py-2 text-brand-charcoal hover:text-brand-teal hover:bg-gray-50 rounded-md"
+              className="block px-3 py-2 text-brand-charcoal hover:text-brand-red hover:bg-gray-50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/products" 
-              className="block px-3 py-2 text-brand-charcoal hover:text-brand-teal hover:bg-gray-50 rounded-md"
+              className="block px-3 py-2 text-brand-charcoal hover:text-brand-red hover:bg-gray-50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Products
             </Link>
             <Link 
               to="/order" 
-              className="block px-3 py-2 text-brand-charcoal hover:text-brand-teal hover:bg-gray-50 rounded-md"
+              className="block px-3 py-2 text-brand-charcoal hover:text-brand-red hover:bg-gray-50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Place Order
             </Link>
             <Link 
               to="/about" 
-              className="block px-3 py-2 text-brand-charcoal hover:text-brand-teal hover:bg-gray-50 rounded-md"
+              className="block px-3 py-2 text-brand-charcoal hover:text-brand-red hover:bg-gray-50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
             </Link>
             <Link 
               to="/contact" 
-              className="block px-3 py-2 text-brand-charcoal hover:text-brand-teal hover:bg-gray-50 rounded-md"
+              className="block px-3 py-2 text-brand-charcoal hover:text-brand-red hover:bg-gray-50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
@@ -97,3 +101,4 @@ const Header = () => {
 };
 
 export default Header;
+
