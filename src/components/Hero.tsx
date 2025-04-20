@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="relative">
             <div className="rounded-lg aspect-[4/3] overflow-hidden">
               <img 
-                src="/lovable-uploads/ccf1a59b-9e8f-47a7-a127-19b4db08d59c.png" 
+                src="/lovable-uploads/37b5feae-0dcc-4b5e-b8f8-24e0a4fabd5b.png" 
                 alt="Urban Wholesalers delivery service in action" 
                 className="w-full h-full object-cover"
               />
