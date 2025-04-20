@@ -10,26 +10,26 @@ const Hero = () => {
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-brand-charcoal leading-tight mb-4">
               Wholesale Delivery <br /> 
-              <span className="text-brand-teal">Right To Your Door</span>
+              <span className="text-brand-red">Right To Your Door</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Urban Wholesalers Ltd provides quality food, drinks, and more to off-license stores across the UK. 
               Cash and carry convenience with direct delivery to your shop.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-brand-teal hover:bg-brand-teal/90 text-white">
+              <Button asChild size="lg" className="bg-brand-red hover:bg-brand-red/90 text-white">
                 <Link to="/products">Browse Products</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-brand-teal text-brand-teal hover:bg-brand-teal/10">
+              <Button asChild size="lg" variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red/10">
                 <Link to="/order">Place Order</Link>
               </Button>
             </div>
           </div>
           <div className="relative">
-            <div className="bg-gray-200 rounded-lg aspect-[4/3] overflow-hidden">
+            <div className="rounded-lg aspect-[4/3] overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1585644156288-8bfef97cdab8?q=80&w=1200&auto=format&fit=crop" 
-                alt="Urban Wholesalers Delivery" 
+                src="/lovable-uploads/ccf1a59b-9e8f-47a7-a127-19b4db08d59c.png" 
+                alt="Urban Wholesalers delivery service in action" 
                 className="w-full h-full object-cover"
               />
             </div>
