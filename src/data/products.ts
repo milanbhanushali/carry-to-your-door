@@ -1,113 +1,133 @@
 
 import { Product } from "@/components/ProductCard";
+import { Package, Box, Cigarette, Pill, Battery, House, Pencil, Warehouse, Package as MiscPackage } from "lucide-react";
 
 export const products: Product[] = [
   {
     id: "1",
-    name: "Premium Coffee Beans",
-    category: "food",
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=500&auto=format&fit=crop",
+    name: "Carrier Bags",
+    category: "carrier-bags",
+    image: "/placeholder.svg",
     price: 15.99,
-    packSize: "5kg bag",
-    description: "High-quality coffee beans for your coffee shop or cafe section. Rich flavor profile with notes of chocolate and caramel."
+    packSize: "100 pieces",
+    description: "High-quality carrier bags for retail use. Durable and practical for everyday use."
   },
   {
     id: "2",
-    name: "Energy Drink Variety Pack",
-    category: "drinks",
-    image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?q=80&w=500&auto=format&fit=crop",
+    name: "Rolling Papers",
+    category: "rolling-papers",
+    image: "/placeholder.svg",
     price: 24.50,
-    packSize: "24 x 500ml",
-    description: "Assorted energy drinks including major brands. Perfect for keeping your refrigerated section stocked with popular options."
+    packSize: "50 booklets",
+    description: "Premium quality rolling papers. Various sizes available."
   },
   {
     id: "3",
-    name: "Disposable Vape Pens - Mint",
-    category: "vapes",
-    image: "https://images.unsplash.com/photo-1561299590-2ea159aedae4?q=80&w=500&auto=format&fit=crop",
+    name: "Raw Products",
+    category: "raw-products",
+    image: "/placeholder.svg",
     price: 45.00,
-    packSize: "10 units",
-    description: "Disposable vape pens with refreshing mint flavor. Ready to sell with attractive packaging and long-lasting battery."
+    packSize: "Mixed box",
+    description: "Selection of raw products for your store. High demand items."
   },
   {
     id: "4",
-    name: "Assorted Chocolate Bars",
-    category: "food",
+    name: "Filter Tips",
+    category: "filter-tips",
     image: "/placeholder.svg",
     price: 18.75,
-    packSize: "48 bars",
-    description: "Popular chocolate bars in various flavors. A must-have for any off-license confectionery section."
+    packSize: "100 packs",
+    description: "Quality filter tips. Essential stock for your shop."
   },
   {
     id: "5",
-    name: "Artisan Sandwich Platter",
-    category: "sandwiches",
-    image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=500&auto=format&fit=crop",
+    name: "ELF Pre‑Filled Pods",
+    category: "elf-pods",
+    image: "/placeholder.svg",
     price: 32.99,
-    packSize: "24 pieces",
-    description: "Fresh artisan sandwiches with premium fillings. Individually wrapped and ready to display in your chilled food section."
+    packSize: "20 units",
+    description: "ELF pre-filled pods in various flavors. Popular among customers."
   },
   {
     id: "6",
-    name: "Premium Bottled Water",
-    category: "drinks",
+    name: "Smoke Requisites",
+    category: "smoke-requisites",
     image: "/placeholder.svg",
-    price: 12.50,
-    packSize: "24 x 500ml",
-    description: "Pure spring water in convenient bottles. Essential stock for any off-license store."
+    price: 22.50,
+    packSize: "Mixed box",
+    description: "Essential smoke requisites for your store."
   },
   {
     id: "7",
-    name: "Chocolate Celebration Cake",
-    category: "cakes",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=500&auto=format&fit=crop",
+    name: "Lighters",
+    category: "lighters",
+    image: "/placeholder.svg",
     price: 28.00,
-    packSize: "12 inch (serves 16)",
-    description: "Rich chocolate celebration cake, perfect for special occasions. Pre-sliced for convenient serving."
+    packSize: "50 pieces",
+    description: "Reliable lighters in various designs and colors."
   },
   {
     id: "8",
-    name: "Craft Beer Selection",
-    category: "drinks",
+    name: "Medicines",
+    category: "medicines",
     image: "/placeholder.svg",
-    price: 36.50,
-    packSize: "24 x 330ml",
-    description: "Curated selection of popular craft beers. Includes IPAs, stouts, and lagers from independent breweries."
+    price: 56.50,
+    packSize: "Assorted pack",
+    description: "Over-the-counter medicines and healthcare products."
   },
   {
     id: "9",
-    name: "Premium Vape Starter Kit",
-    category: "vapes",
+    name: "Batteries",
+    category: "batteries",
     image: "/placeholder.svg",
-    price: 120.00,
-    packSize: "5 kits",
-    description: "Complete vape starter kits with device, tank, and e-liquid. High-quality components with attractive retail packaging."
+    price: 25.00,
+    packSize: "48 units",
+    description: "Long-lasting batteries in various sizes."
   },
   {
     id: "10",
-    name: "Classic Victoria Sponge",
-    category: "cakes",
+    name: "IVG 2400 Reload Pods",
+    category: "ivg-pods",
     image: "/placeholder.svg",
-    price: 18.99,
-    packSize: "10 inch (serves 8)",
-    description: "Traditional Victoria sponge cake with jam and buttercream filling. A customer favorite for any cake display."
+    price: 120.00,
+    packSize: "24 units",
+    description: "IVG 2400 reload pods. Latest stock with popular flavors."
   },
   {
     id: "11",
-    name: "Premium Egg & Cress Sandwich",
-    category: "sandwiches",
+    name: "House Hold Products",
+    category: "household",
     image: "/placeholder.svg",
-    price: 22.50,
-    packSize: "12 sandwiches",
-    description: "Classic egg & cress sandwiches on soft brown bread. Individually wrapped and perfect for your chilled food section."
+    price: 45.99,
+    packSize: "Mixed box",
+    description: "Essential household products for your convenience store."
   },
   {
     id: "12",
-    name: "Crisps Variety Box",
-    category: "food",
+    name: "Stationery",
+    category: "stationery",
     image: "/placeholder.svg",
-    price: 16.25,
-    packSize: "48 packets",
-    description: "Mixed box of popular crisp flavors. Individual serving sizes perfect for grab-and-go sales."
+    price: 34.25,
+    packSize: "Assorted pack",
+    description: "Quality stationery items for your store."
+  },
+  {
+    id: "13",
+    name: "Warehouse Sale Items",
+    category: "warehouse-sale",
+    image: "/placeholder.svg",
+    price: 99.99,
+    packSize: "Bulk pack",
+    description: "Special warehouse sale items at competitive prices."
+  },
+  {
+    id: "14",
+    name: "Miscellaneous Products",
+    category: "miscellaneous",
+    image: "/placeholder.svg",
+    price: 29.99,
+    packSize: "Various",
+    description: "Various miscellaneous products for your store needs."
   }
 ];
+
