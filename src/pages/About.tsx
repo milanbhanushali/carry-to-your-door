@@ -1,4 +1,3 @@
-
 import MainLayout from "@/layouts/MainLayout";
 
 const About = () => {
@@ -169,7 +168,23 @@ const About = () => {
           </div>
         </div>
         
-        <div className="bg-gray-100 p-8 rounded-lg">
+        <div className="bg-gray-100 p-8 rounded-lg mt-12">
+          <h2 className="text-2xl font-bold text-brand-charcoal mb-6 text-center">Company Information</h2>
+          <div className="max-w-xl mx-auto text-center text-gray-700">
+            <p><strong>Name:</strong> Urban Wholesalers Ltd</p>
+            <p className="mt-2">
+              <strong>Address:</strong>
+              <br />27 Burnham Close
+              <br />Windsor
+              <br />SL4 4PN
+            </p>
+            <p className="mt-2"><strong>Website:</strong> <a href="https://www.urbanwholesalers.co.uk" target="_blank" rel="noopener noreferrer" className="text-brand-teal hover:underline">www.urbanwholesalers.co.uk</a></p>
+            <p className="mt-2"><strong>VAT No:</strong> 166127901</p>
+            <p className="mt-2"><strong>Owner:</strong> Manpreet Singh</p>
+          </div>
+        </div>
+        
+        <div className="mb-16">
           <h2 className="text-2xl font-bold text-brand-charcoal mb-6 text-center">Our Coverage Area</h2>
           <p className="text-center text-gray-600 mb-6">
             We currently provide delivery services to off-license stores throughout the following regions:
