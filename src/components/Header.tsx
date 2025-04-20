@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart } from "lucide-react";
@@ -19,7 +18,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/2cd892e9-1795-47cd-a959-5ff00dcda8aa.png" 
               alt="Urban Wholesalers Ltd" 
-              className="h-12"
+              className="h-16"
             />
           </Link>
 
@@ -101,4 +100,3 @@ const Header = () => {
 };
 
 export default Header;
-
