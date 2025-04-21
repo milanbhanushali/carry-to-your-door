@@ -20,12 +20,12 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-md">
+    <Card className="overflow-hidden transition-all hover:shadow-lg hover:scale-[1.02] duration-300">
       <div className="aspect-square overflow-hidden bg-gray-100">
         <img 
           src={product.image || "/placeholder.svg"} 
           alt={product.name}
-          className="w-full h-full object-cover transition-transform hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 animate-fade-in"
         />
       </div>
       <CardContent className="p-4">
