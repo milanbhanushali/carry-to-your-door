@@ -1,4 +1,3 @@
-
 import MainLayout from "@/layouts/MainLayout";
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
-import { QrCode, WhatsApp } from "lucide-react";
+import { QrCode, MessageCircle } from "lucide-react";
 
 const Index = () => {
   // Get 4 featured products
@@ -47,7 +46,7 @@ const Index = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="bg-brand-red/10 p-2 rounded-full">
-                    <WhatsApp className="h-5 w-5 text-brand-red" />
+                    <MessageCircle className="h-5 w-5 text-brand-red" />
                   </div>
                   <p className="text-gray-700">Browse our complete inventory</p>
                 </div>
@@ -59,7 +58,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="bg-brand-red/10 p-2 rounded-full">
-                    <WhatsApp className="h-5 w-5 text-brand-red" />
+                    <MessageCircle className="h-5 w-5 text-brand-red" />
                   </div>
                   <p className="text-gray-700">Get real-time order updates</p>
                 </div>
@@ -77,7 +76,7 @@ const Index = () => {
                     />
                     {/* WhatsApp Icon Overlay */}
                     <div className="absolute -bottom-4 -right-4 bg-green-500 p-3 rounded-full shadow-lg">
-                      <WhatsApp className="h-8 w-8 text-white" />
+                      <MessageCircle className="h-8 w-8 text-white" />
                     </div>
                   </div>
                   <div className="text-center mt-8">
