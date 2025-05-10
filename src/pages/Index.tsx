@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
+import { QrCode, WhatsApp } from "lucide-react";
 
 const Index = () => {
   // Get 4 featured products
@@ -29,6 +30,63 @@ const Index = () => {
             {featuredProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* WhatsApp Catalog Section */}
+      <section className="py-16 bg-brand-red/5">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-brand-charcoal">Order Via WhatsApp</h2>
+              <p className="text-lg text-gray-600">
+                Scan our QR code with your phone camera to access our complete product catalog on WhatsApp. 
+                Quick, convenient ordering right from your mobile device.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-brand-red/10 p-2 rounded-full">
+                    <WhatsApp className="h-5 w-5 text-brand-red" />
+                  </div>
+                  <p className="text-gray-700">Browse our complete inventory</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-brand-red/10 p-2 rounded-full">
+                    <QrCode className="h-5 w-5 text-brand-red" />
+                  </div>
+                  <p className="text-gray-700">Place orders 24/7</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-brand-red/10 p-2 rounded-full">
+                    <WhatsApp className="h-5 w-5 text-brand-red" />
+                  </div>
+                  <p className="text-gray-700">Get real-time order updates</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl hover:scale-105">
+                <div className="bg-brand-red/5 p-5 rounded-lg">
+                  <div className="relative w-64 h-64 mx-auto">
+                    {/* QR Code Image */}
+                    <img 
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop" 
+                      alt="WhatsApp Catalog QR Code" 
+                      className="w-full h-full object-cover rounded-lg shadow-md animate-pulse"
+                    />
+                    {/* WhatsApp Icon Overlay */}
+                    <div className="absolute -bottom-4 -right-4 bg-green-500 p-3 rounded-full shadow-lg">
+                      <WhatsApp className="h-8 w-8 text-white" />
+                    </div>
+                  </div>
+                  <div className="text-center mt-8">
+                    <h3 className="font-semibold text-brand-charcoal">Scan to Order</h3>
+                    <p className="text-sm text-gray-600 mt-1">Point your camera at the QR code</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
