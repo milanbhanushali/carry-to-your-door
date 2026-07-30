@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Package, Box, Cigarette, Pill, Battery, House, Pencil, Warehouse } from "lucide-react";
 
 export type ProductCategory = 
-  | "all" 
+  | "all"
+  | "sandwiches"
   | "carrier-bags"
   | "rolling-papers"
   | "raw-products"
@@ -28,6 +29,7 @@ interface CategoryFilterProps {
 const CategoryFilter = ({ selectedCategory, onCategoryChange }: CategoryFilterProps) => {
   const categories: { value: ProductCategory; label: string; icon?: React.ReactNode }[] = [
     { value: "all", label: "All Products" },
+    { value: "sandwiches", label: "Sandwiches & Wraps", icon: <Package className="w-4 h-4" /> },
     { value: "carrier-bags", label: "Carrier Bags", icon: <Package className="w-4 h-4" /> },
     { value: "rolling-papers", label: "Rolling Papers" },
     { value: "raw-products", label: "Raw Products", icon: <Box className="w-4 h-4" /> },

@@ -127,5 +127,153 @@ export const products: Product[] = [
     price: 29.99,
     packSize: "Various",
     description: "Various miscellaneous products for your store needs."
+  },
+  // ---- Snacksters sandwiches (NOTE: prices are placeholders - update with real trade prices) ----
+  {
+    id: "15",
+    name: "Snacksters Chicken Tikka",
+    category: "sandwiches",
+    brand: "Snacksters",
+    image: "/products/snacksters-chicken-tikka.webp",
+    price: 1.35,
+    packSize: "Single sandwich",
+    description: "Cooked chicken pieces in a mild tikka spiced mayonnaise on oatmeal bread. Keep refrigerated below 5°C."
+  },
+  {
+    id: "16",
+    name: "Snacksters Double Cheese & Onion",
+    category: "sandwiches",
+    brand: "Snacksters",
+    image: "/products/snacksters-double-cheese-onion.webp",
+    price: 1.25,
+    packSize: "Single sandwich",
+    description: "Grated cheese and diced onion in mayonnaise on oatmeal bread. Suitable for vegetarians."
+  },
+  {
+    id: "17",
+    name: "Snacksters Cheese & Pickle",
+    category: "sandwiches",
+    brand: "Snacksters",
+    image: "/products/snacksters-cheese-pickle.webp",
+    price: 1.25,
+    packSize: "Single sandwich",
+    description: "Mature cheese with tangy pickle on oatmeal bread. Suitable for vegetarians."
+  },
+  {
+    id: "18",
+    name: "Snacksters Ham & Cheese",
+    category: "sandwiches",
+    brand: "Snacksters",
+    image: "/products/snacksters-ham-cheese.webp",
+    price: 1.35,
+    packSize: "Single sandwich",
+    description: "Cooked formed ham pieces and grated cheese in mayonnaise on oatmeal bread."
+  },
+  {
+    id: "19",
+    name: "Snacksters Tuna Mayo",
+    category: "sandwiches",
+    brand: "Snacksters",
+    image: "/products/snacksters-tuna-mayo.webp",
+    price: 1.35,
+    packSize: "Single sandwich",
+    description: "Tuna and mayonnaise on oatmeal bread. A lunchtime best seller."
+  },
+  // ---- Target A Snack sandwiches & wraps ----
+  {
+    id: "20",
+    name: "Target A Snack Chicken Caesar Wrap",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-chicken-caesar-wrap.webp",
+    price: 1.55,
+    packSize: "Single wrap",
+    description: "Chicken caesar wrap made using halal chicken. Keep refrigerated below 5°C."
+  },
+  {
+    id: "21",
+    name: "Target A Snack Chicken Fajita Wrap",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-chicken-fajita-wrap.webp",
+    price: 1.55,
+    packSize: "Single wrap",
+    description: "Spiced chicken fajita wrap made using halal chicken. Keep refrigerated below 5°C."
+  },
+  {
+    id: "22",
+    name: "Target A Snack Chicken & Bacon Mayo",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-chicken-bacon-mayo.webp",
+    price: 1.45,
+    packSize: "Single sandwich",
+    description: "Chicken and bacon in mayonnaise on oatmeal bread."
+  },
+  {
+    id: "23",
+    name: "Target A Snack Chicken Tikka",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-chicken-tikka.webp",
+    price: 1.45,
+    packSize: "Single sandwich",
+    description: "Chicken tikka sandwich made using halal chicken, on oatmeal bread."
+  },
+  {
+    id: "24",
+    name: "Target A Snack Chunky Egg Mayo",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-chunky-egg-mayo.webp",
+    price: 1.30,
+    packSize: "Single sandwich",
+    description: "Chunky egg mayonnaise on oatmeal bread. Suitable for vegetarians."
+  },
+  {
+    id: "25",
+    name: "Target A Snack Double Cheese & Onion",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-double-cheese-onion.webp",
+    price: 1.30,
+    packSize: "Single sandwich",
+    description: "Double cheese and onion sandwich on oatmeal bread. Suitable for vegetarians."
+  },
+  {
+    id: "26",
+    name: "Target A Snack Ham & Cheese",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-ham-cheese.webp",
+    price: 1.40,
+    packSize: "Single sandwich",
+    description: "Ham and cheese sandwich on oatmeal bread."
+  },
+  {
+    id: "27",
+    name: "Target A Snack Tuna Mayo",
+    category: "sandwiches",
+    brand: "Target A Snack",
+    image: "/products/target-tuna-mayo.webp",
+    price: 1.40,
+    packSize: "Single sandwich",
+    description: "Tuna mayo sandwich on oatmeal bread."
+  }
+];
+
+// Brands shown on the home page. Add new brands here.
+export const brands = [
+  {
+    slug: "Snacksters",
+    name: "Snacksters",
+    tagline: "Fresh-filled sandwiches on oatmeal bread",
+    image: "/products/snacksters-chicken-tikka.webp"
+  },
+  {
+    slug: "Target A Snack",
+    name: "Target A Snack",
+    tagline: "\"I target your hunger\" - sandwiches & wraps, halal chicken range",
+    image: "/products/target-chicken-caesar-wrap.webp"
   }
 ];

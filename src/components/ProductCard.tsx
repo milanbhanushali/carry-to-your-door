@@ -8,6 +8,7 @@ export interface Product {
   id: string;
   name: string;
   category: ProductCategory;
+  brand?: string;
   image: string;
   price: number;
   packSize: string;
@@ -29,10 +30,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
         />
       </div>
       <CardContent className="p-4">
-        <div className="mb-2">
+        <div className="mb-2 flex flex-wrap gap-1.5">
           <span className="text-xs font-medium px-2 py-1 bg-gray-100 rounded-full text-gray-600">
             {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
           </span>
+          {product.brand && (
+            <span className="text-xs font-medium px-2 py-1 bg-brand-red/10 rounded-full text-brand-red">
+              {product.brand}
+            </span>
+          )}
         </div>
         <h3 className="font-semibold text-brand-charcoal text-lg mb-1">{product.name}</h3>
         <div className="flex justify-between items-baseline">

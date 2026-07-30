@@ -9,18 +9,27 @@ import { products } from "@/data/products";
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") as ProductCategory | null;
-  
+  const brandParam = searchParams.get("brand");
+
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>(categoryParam || "all");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
-  
-  // Update filtered products when category changes
+
+  // Update filtered products when category or brand changes
   useEffect(() => {
-    if (selectedCategory === "all") {
-      setFilteredProducts(products);
-    } else {
-      setFilteredProducts(products.filter(product => product.category === selectedCategory));
+    let result = products;
+    if (selectedCategory !== "all") {
+      result = result.filter(product => product.category === selectedCategory);
     }
-  }, [selectedCategory]);
+    if (brandParam) {
+      result = result.filter(product => product.brand === brandParam);
+    }
+    setFilteredProducts(result);
+  }, [selectedCategory, brandParam]);
+
+  const clearBrand = () => {
+    searchParams.delete("brand");
+    setSearchParams(searchParams);
+  };
   
   // Update URL params when category changes
   useEffect(() => {
@@ -40,10 +49,20 @@ const Products = () => {
     <MainLayout>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-brand-charcoal mb-2">Product Catalog</h1>
+          <h1 className="text-3xl font-bold text-brand-charcoal mb-2">
+            {brandParam ? `${brandParam} Products` : "Product Catalog"}
+          </h1>
           <p className="text-gray-600">
             Browse our extensive range of wholesale products for your off-license store.
           </p>
+          {brandParam && (
+            <button
+              onClick={clearBrand}
+              className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-red hover:underline"
+            >
+              ✕ Clear brand filter, show all products
+            </button>
+          )}
         </div>
         
         <div className="flex flex-col md:flex-row gap-8">

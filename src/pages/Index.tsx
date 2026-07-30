@@ -3,18 +3,60 @@ import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { products } from "@/data/products";
+import { products, brands } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { QrCode, MessageCircle } from "lucide-react";
 
 const Index = () => {
-  // Get 4 featured products
-  const featuredProducts = products.slice(0, 4);
+  // Featured products on the home page - edit the ids to change what's shown
+  const featuredIds = ["15", "19", "20", "21"];
+  const featuredProducts = products.filter(p => featuredIds.includes(p.id));
   
   return (
     <MainLayout>
       <Hero />
-      
+
+      {/* Shop by Brand Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-brand-charcoal mb-2">Shop by Brand</h2>
+            <p className="text-gray-600">Pick a brand to see its full range.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {brands.map(brand => (
+              <Link
+                key={brand.slug}
+                to={`/products?brand=${encodeURIComponent(brand.slug)}`}
+                className="group block"
+                aria-label={`View all ${brand.name} products`}
+              >
+                <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center p-6">
+                    <img
+                      src={brand.image}
+                      alt={`${brand.name} products`}
+                      loading="lazy"
+                      className="h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <CardContent className="p-5 text-center border-t">
+                    <h3 className="text-xl font-bold text-brand-charcoal group-hover:text-brand-red transition-colors">
+                      {brand.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-1">{brand.tagline}</p>
+                    <span className="inline-block mt-3 text-sm font-semibold text-brand-red">
+                      View all products →
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
