@@ -268,12 +268,12 @@ export const brands = [
     slug: "Snacksters",
     name: "Snacksters",
     tagline: "Fresh-filled sandwiches on oatmeal bread",
-    image: "/products/snacksters-chicken-tikka.webp"
+    image: "/products/brand-snacksters.webp"
   },
   {
     slug: "Target A Snack",
     name: "Target A Snack",
     tagline: "\"I target your hunger\" - sandwiches & wraps, halal chicken range",
-    image: "/products/target-chicken-caesar-wrap.webp"
+    image: "/products/brand-target-a-snack.webp"
   }
 ];
