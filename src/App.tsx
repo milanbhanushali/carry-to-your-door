@@ -13,12 +13,17 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// import.meta.env.BASE_URL mirrors whatever "base" is set to in vite.config.ts,
+// so this automatically matches GitHub Pages (served from /carry-to-your-door/)
+// while staying "/" for local dev and any host that serves from the root.
+const basename = import.meta.env.BASE_URL;
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/products" element={<Products />} />
