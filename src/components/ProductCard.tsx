@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ProductCategory } from "./CategoryFilter";
+import { withBase } from "@/lib/utils";
 
 export interface Product {
   id: string;
@@ -24,7 +25,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     <Card className="overflow-hidden transition-all hover:shadow-lg hover:scale-[1.02] duration-300">
       <div className="aspect-square overflow-hidden bg-gray-100">
         <img 
-          src={product.image || "/placeholder.svg"} 
+          src={withBase(product.image || "/placeholder.svg")}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 animate-fade-in"
         />

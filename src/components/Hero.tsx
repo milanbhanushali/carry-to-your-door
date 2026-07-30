@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { withBase } from "@/lib/utils";
 
 const Hero = () => {
   return (
@@ -28,7 +29,7 @@ const Hero = () => {
           <div className="relative">
             <div className="rounded-lg aspect-[4/3] overflow-hidden">
               <img 
-                src="/lovable-uploads/37b5feae-0dcc-4b5e-b8f8-24e0a4fabd5b.png" 
+                src={withBase("/lovable-uploads/37b5feae-0dcc-4b5e-b8f8-24e0a4fabd5b.png")}
                 alt="Urban Wholesalers delivery service in action" 
                 className="w-full h-full object-cover"
               />

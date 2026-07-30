@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
+import { withBase } from "@/lib/utils";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -48,7 +49,7 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-100 rounded-lg overflow-hidden">
             <img 
-              src={product.image || "/placeholder.svg"} 
+              src={withBase(product.image || "/placeholder.svg")}
               alt={product.name}
               className="w-full h-full object-cover"
             />

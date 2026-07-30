@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { products, brands } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { QrCode, MessageCircle } from "lucide-react";
+import { withBase } from "@/lib/utils";
 
 const Index = () => {
   // Featured products on the home page - edit the ids to change what's shown
@@ -35,7 +36,7 @@ const Index = () => {
                 <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                   <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center p-6">
                     <img
-                      src={brand.image}
+                      src={withBase(brand.image)}
                       alt={`${brand.name} products`}
                       loading="lazy"
                       className="h-full object-contain transition-transform duration-500 group-hover:scale-105"

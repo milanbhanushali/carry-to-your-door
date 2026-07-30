@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { withBase } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/2cd892e9-1795-47cd-a959-5ff00dcda8aa.png" 
+              src={withBase("/lovable-uploads/2cd892e9-1795-47cd-a959-5ff00dcda8aa.png")}
               alt="Urban Wholesalers Ltd" 
               className="h-16"
             />

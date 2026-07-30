@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Globe, Mail, Phone } from "lucide-react";
+import { withBase } from "@/lib/utils";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <img 
-              src="/lovable-uploads/710d3246-75a5-472c-a7a6-83ddb96da13e.png" 
+              src={withBase("/lovable-uploads/710d3246-75a5-472c-a7a6-83ddb96da13e.png")}
               alt="Urban Wholesalers Logo" 
               className="h-12 mb-4"
             />
