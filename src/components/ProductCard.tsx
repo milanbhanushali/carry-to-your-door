@@ -22,15 +22,15 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg hover:scale-[1.02] duration-300">
+    <Card className="h-full flex flex-col overflow-hidden transition-all hover:shadow-lg hover:scale-[1.02] duration-300">
       <div className="aspect-square overflow-hidden bg-gray-100">
-        <img 
+        <img
           src={withBase(product.image || "/placeholder.svg")}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 animate-fade-in"
         />
       </div>
-      <CardContent className="p-4">
+      <CardContent className="p-4 flex-1 flex flex-col">
         <div className="mb-2 flex flex-wrap gap-1.5">
           <span className="text-xs font-medium px-2 py-1 bg-gray-100 rounded-full text-gray-600">
             {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
@@ -41,12 +41,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </span>
           )}
         </div>
-        <h3 className="font-semibold text-brand-charcoal text-lg mb-1">{product.name}</h3>
-        <p className="text-gray-600 text-sm">Pack: {product.packSize}</p>
+        <h3 className="font-semibold text-brand-charcoal text-lg mb-1 line-clamp-2 min-h-[3.5rem]">{product.name}</h3>
+        <p className="text-gray-600 text-sm mt-auto pt-1">Pack: {product.packSize}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           className="w-full border-brand-teal text-brand-teal hover:bg-brand-teal/10"
           asChild
         >

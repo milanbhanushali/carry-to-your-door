@@ -30,10 +30,10 @@ const Index = () => {
               <Link
                 key={brand.slug}
                 to={`/products?brand=${encodeURIComponent(brand.slug)}`}
-                className="group block"
+                className="group block h-full"
                 aria-label={`View all ${brand.name} products`}
               >
-                <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                   <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center p-6">
                     <img
                       src={withBase(brand.image)}
@@ -42,12 +42,12 @@ const Index = () => {
                       className="h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <CardContent className="p-5 text-center border-t">
+                  <CardContent className="p-5 text-center border-t flex-1 flex flex-col">
                     <h3 className="text-xl font-bold text-brand-charcoal group-hover:text-brand-red transition-colors">
                       {brand.name}
                     </h3>
-                    <p className="text-sm text-gray-600 mt-1">{brand.tagline}</p>
-                    <span className="inline-block mt-3 text-sm font-semibold text-brand-red">
+                    <p className="text-sm text-gray-600 mt-1 line-clamp-2">{brand.tagline}</p>
+                    <span className="inline-block mt-auto pt-3 text-sm font-semibold text-brand-red">
                       View all products →
                     </span>
                   </CardContent>
