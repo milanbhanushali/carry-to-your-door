@@ -42,10 +42,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           )}
         </div>
         <h3 className="font-semibold text-brand-charcoal text-lg mb-1">{product.name}</h3>
-        <div className="flex justify-between items-baseline">
-          <p className="text-gray-600 text-sm">Pack: {product.packSize}</p>
-          <p className="font-bold text-brand-charcoal">£{product.price.toFixed(2)}</p>
-        </div>
+        <p className="text-gray-600 text-sm">Pack: {product.packSize}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button 

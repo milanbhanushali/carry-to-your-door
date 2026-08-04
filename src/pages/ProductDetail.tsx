@@ -56,18 +56,18 @@ const ProductDetail = () => {
           </div>
           
           <div>
-            <div className="mb-2">
+            <div className="mb-2 flex flex-wrap gap-1.5">
               <span className="text-sm font-medium px-3 py-1 bg-gray-100 rounded-full text-gray-600">
                 {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
               </span>
+              {product.brand && (
+                <span className="text-sm font-medium px-3 py-1 bg-brand-red/10 rounded-full text-brand-red">
+                  {product.brand}
+                </span>
+              )}
             </div>
-            
-            <h1 className="text-3xl font-bold text-brand-charcoal mb-2">{product.name}</h1>
-            
-            <div className="flex items-baseline gap-3 mb-4">
-              <span className="text-2xl font-bold text-brand-charcoal">£{product.price.toFixed(2)}</span>
-              <span className="text-gray-600">per {product.packSize}</span>
-            </div>
+
+            <h1 className="text-3xl font-bold text-brand-charcoal mb-4">{product.name}</h1>
             
             <div className="border-t border-gray-200 pt-4 mb-6">
               <h2 className="text-lg font-semibold text-brand-charcoal mb-2">Description</h2>

@@ -380,6 +380,77 @@ export const products: Product[] = [
     price: 0.95,
     packSize: "Single slice",
     description: "Two layers of classic sponge sandwiched with jam and dusted with icing sugar."
+  },
+  // ---- Balconi (Italy, est. 1953) ----
+  {
+    id: "40",
+    name: "Balconi Choco Dessert",
+    category: "cakes",
+    brand: "Balconi",
+    image: "/products/balconi-choco-dessert.webp",
+    price: 0,
+    packSize: "400g",
+    description: "Cocoa sponge layered with cream, coated and topped with chocolate shavings. Product of Italy."
+  },
+  {
+    id: "41",
+    name: "Balconi Rollino Latte",
+    category: "cakes",
+    brand: "Balconi",
+    image: "/products/balconi-rollino-latte.webp",
+    price: 0,
+    packSize: "6 rollini, 222g",
+    description: "Individually wrapped mini sponge rolls with a milk cream filling. No palm oil."
+  },
+  {
+    id: "42",
+    name: "Balconi Rollino Cacao",
+    category: "cakes",
+    brand: "Balconi",
+    image: "/products/balconi-rollino-cacao.webp",
+    price: 0,
+    packSize: "6 x 37g, 222g",
+    description: "Individually wrapped mini sponge rolls with a yummy cocoa cream filling. Free from preservatives and colours."
+  },
+  {
+    id: "43",
+    name: "Balconi Strawberry Cake",
+    category: "cakes",
+    brand: "Balconi",
+    image: "/products/balconi-strawberry-cake.webp",
+    price: 0,
+    packSize: "400g",
+    description: "Sponge cake with strawberry filling, topped with white chocolate shavings. Product of Italy."
+  },
+  {
+    id: "44",
+    name: "Balconi Tiramisu",
+    category: "cakes",
+    brand: "Balconi",
+    image: "/products/balconi-tiramisu.webp",
+    price: 0,
+    packSize: "400g",
+    description: "Soft and creamy layered sponge with coffee-flavoured cream, dusted with cocoa."
+  },
+  {
+    id: "45",
+    name: "Balconi Rollino Nocciola",
+    category: "cakes",
+    brand: "Balconi",
+    image: "/products/balconi-rollino-nocciola.webp",
+    price: 0,
+    packSize: "6 x 37g, 222g",
+    description: "Individually wrapped mini sponge rolls with a hazelnut cream filling. Free from preservatives and artificial colours."
+  },
+  {
+    id: "46",
+    name: "Balconi Viennese",
+    category: "cakes",
+    brand: "Balconi",
+    image: "/products/balconi-viennese.webp",
+    price: 0,
+    packSize: "400g",
+    description: "Soft sponge cake with apricot jam and cocoa cream filling, coated in chocolate. Product of Italy."
   }
 ];
 
@@ -402,5 +473,11 @@ export const brands = [
     name: "Hunts Bakery",
     tagline: "Est. 1949 - traditional cake slices, freshly baked",
     image: "/products/brand-hunts-bakery.webp"
+  },
+  {
+    slug: "Balconi",
+    name: "Balconi",
+    tagline: "Milano, Italy - 1953 - Italian sponge cakes and rollini",
+    image: "/products/brand-balconi.webp"
   }
 ];
