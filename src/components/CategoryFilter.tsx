@@ -6,6 +6,7 @@ import { Package, Box, Cigarette, Pill, Battery, House, Pencil, Warehouse } from
 export type ProductCategory = 
   | "all"
   | "sandwiches"
+  | "cakes"
   | "carrier-bags"
   | "rolling-papers"
   | "raw-products"
@@ -30,6 +31,7 @@ const CategoryFilter = ({ selectedCategory, onCategoryChange }: CategoryFilterPr
   const categories: { value: ProductCategory; label: string; icon?: React.ReactNode }[] = [
     { value: "all", label: "All Products" },
     { value: "sandwiches", label: "Sandwiches & Wraps", icon: <Package className="w-4 h-4" /> },
+    { value: "cakes", label: "Cakes", icon: <Package className="w-4 h-4" /> },
     { value: "carrier-bags", label: "Carrier Bags", icon: <Package className="w-4 h-4" /> },
     { value: "rolling-papers", label: "Rolling Papers" },
     { value: "raw-products", label: "Raw Products", icon: <Box className="w-4 h-4" /> },

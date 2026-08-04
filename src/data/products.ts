@@ -259,6 +259,127 @@ export const products: Product[] = [
     price: 1.40,
     packSize: "Single sandwich",
     description: "Tuna mayo sandwich on oatmeal bread."
+  },
+  // ---- Hunts Bakery cakes (NOTE: prices are placeholders - update with real trade prices) ----
+  {
+    id: "28",
+    name: "Hunts Bakery Chocolate Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-chocolate.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Rich chocolate sponge topped with chocolate ganache and a drizzle pattern."
+  },
+  {
+    id: "29",
+    name: "Hunts Bakery Coffee Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-coffee-sponge.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Coffee-flavoured sponge topped with coffee icing and a white chocolate drizzle."
+  },
+  {
+    id: "30",
+    name: "Hunts Bakery Fruit Cake",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-fruit.webp",
+    price: 0.99,
+    packSize: "Single slice",
+    description: "Traditional fruit cake with sultanas and glace cherries, baked to a golden top."
+  },
+  {
+    id: "31",
+    name: "Hunts Bakery Iced Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-icing.webp",
+    price: 0.85,
+    packSize: "Single slice",
+    description: "Vanilla sponge topped with white icing and rainbow sprinkles."
+  },
+  {
+    id: "32",
+    name: "Hunts Bakery Jam & Coconut Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-jam-coconut-sponge.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Vanilla sponge topped with raspberry jam and desiccated coconut."
+  },
+  {
+    id: "33",
+    name: "Hunts Bakery Jam Drizzle Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-jam-drizzle.webp",
+    price: 0.85,
+    packSize: "Single slice",
+    description: "Soft sponge finished with a ribboned jam drizzle top."
+  },
+  {
+    id: "34",
+    name: "Hunts Bakery Lemon Drizzle Cake",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-lemon-drizzle.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Classic lemon sponge finished with a tangy lemon sugar drizzle crust."
+  },
+  {
+    id: "35",
+    name: "Hunts Bakery Lemon Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-lemon-sponge.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Lemon sponge topped with lemon fondant icing and a chocolate drizzle."
+  },
+  {
+    id: "36",
+    name: "Hunts Bakery Raspberry Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-raspberry-sponge.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Raspberry-flavoured sponge topped with pink fondant icing and a white drizzle."
+  },
+  {
+    id: "37",
+    name: "Hunts Bakery Strawberry Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-strawberry-sponge.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Strawberry sponge topped with pink icing and rainbow sprinkles."
+  },
+  {
+    id: "38",
+    name: "Hunts Bakery Toffee Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-toffee-sponge.webp",
+    price: 0.89,
+    packSize: "Single slice",
+    description: "Toffee sponge topped with caramel icing and a chocolate drizzle."
+  },
+  {
+    id: "39",
+    name: "Hunts Bakery Victoria Sponge",
+    category: "cakes",
+    brand: "Hunts Bakery",
+    image: "/products/hunts-victoria-sponge.webp",
+    price: 0.95,
+    packSize: "Single slice",
+    description: "Two layers of classic sponge sandwiched with jam and dusted with icing sugar."
   }
 ];
 
@@ -275,5 +396,11 @@ export const brands = [
     name: "Target A Snack",
     tagline: "\"I target your hunger\" - sandwiches & wraps, halal chicken range",
     image: "/products/brand-target-a-snack.webp"
+  },
+  {
+    slug: "Hunts Bakery",
+    name: "Hunts Bakery",
+    tagline: "Est. 1949 - traditional cake slices, freshly baked",
+    image: "/products/brand-hunts-bakery.webp"
   }
 ];
