@@ -7,11 +7,17 @@ import { products, brands } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { QrCode, MessageCircle } from "lucide-react";
 import { withBase } from "@/lib/utils";
+import { buildWhatsAppLink } from "@/lib/business";
 
 const Index = () => {
   // Featured products on the home page - edit the ids to change what's shown
   const featuredIds = ["15", "19", "20", "21"];
   const featuredProducts = products.filter(p => featuredIds.includes(p.id));
+
+  const whatsappLink = buildWhatsAppLink(
+    "Hi, I'd like to see your product catalog and place an order."
+  );
+  const qrCodeSrc = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&data=${encodeURIComponent(whatsappLink)}`;
   
   return (
     <MainLayout>
@@ -108,14 +114,21 @@ const Index = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl hover:scale-105">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl hover:scale-105"
+                aria-label="Open WhatsApp chat with Urban Wholesalers"
+              >
                 <div className="bg-brand-red/5 p-5 rounded-lg">
                   <div className="relative w-64 h-64 mx-auto">
-                    {/* QR Code Image */}
-                    <img 
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop" 
-                      alt="WhatsApp Catalog QR Code" 
-                      className="w-full h-full object-cover rounded-lg shadow-md animate-pulse"
+                    {/* Real QR code encoding our WhatsApp click-to-chat link */}
+                    <img
+                      src={qrCodeSrc}
+                      alt="Scan to open a WhatsApp chat with Urban Wholesalers"
+                      loading="lazy"
+                      className="w-full h-full object-contain rounded-lg shadow-md bg-white"
                     />
                     {/* WhatsApp Icon Overlay */}
                     <div className="absolute -bottom-4 -right-4 bg-green-500 p-3 rounded-full shadow-lg">
@@ -124,10 +137,12 @@ const Index = () => {
                   </div>
                   <div className="text-center mt-8">
                     <h3 className="font-semibold text-brand-charcoal">Scan to Order</h3>
-                    <p className="text-sm text-gray-600 mt-1">Point your camera at the QR code</p>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Point your camera at the QR code, or tap to open WhatsApp
+                    </p>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

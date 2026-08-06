@@ -66,8 +66,8 @@ const Products = () => {
         </div>
         
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="w-full md:w-1/4">
-            <CategoryFilter 
+          <div className="w-full md:w-1/4 md:self-start">
+            <CategoryFilter
               selectedCategory={selectedCategory} 
               onCategoryChange={handleCategoryChange} 
             />

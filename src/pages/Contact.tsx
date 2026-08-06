@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,6 +15,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import MainLayout from "@/layouts/MainLayout";
+import { buildMailtoLink, buildWhatsAppLink, BUSINESS_ADDRESS, BUSINESS_EMAIL } from "@/lib/business";
+import { MessageCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -33,9 +34,8 @@ const formSchema = z.object({
 type ContactFormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,30 +46,27 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = async (data: ContactFormValues) => {
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Contact form data submitted:', data);
-      
-      toast({
-        title: "Message Sent Successfully",
-        description: "We'll get back to you as soon as possible.",
-      });
-      
-      // Reset form
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Error Sending Message",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+  const onSubmit = (data: ContactFormValues) => {
+    // No backend on this site - hand the enquiry off to the visitor's own
+    // email client, pre-filled and ready to send.
+    const body = [
+      data.message,
+      "",
+      `From: ${data.name}`,
+      `Email: ${data.email}`,
+      data.phone ? `Phone: ${data.phone}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.location.href = buildMailtoLink(`Enquiry from ${data.name}`, body);
+
+    toast({
+      title: "Opening Your Email App",
+      description: "Send the pre-filled message and we'll get back to you as soon as possible.",
+    });
+
+    form.reset();
   };
 
   return (
@@ -149,15 +146,27 @@ const Contact = () => {
                     )}
                   />
                   
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
+                  <Button
+                    type="submit"
                     className="w-full bg-brand-teal hover:bg-brand-teal/90"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    Send Message
                   </Button>
                 </form>
               </Form>
+
+              <div className="mt-6 pt-6 border-t text-center">
+                <p className="text-sm text-gray-500 mb-3">Prefer to chat instead?</p>
+                <a
+                  href={buildWhatsAppLink("Hi, I have a question about Urban Wholesalers.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-green-600 font-medium hover:underline"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Message us on WhatsApp
+                </a>
+              </div>
             </div>
           </div>
           
@@ -169,16 +178,16 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-medium text-brand-charcoal mb-2">Address</h3>
                   <p className="text-gray-600">
-                    Urban Wholesalers Ltd<br />
-                    123 Distribution Way<br />
-                    Industrial Park<br />
-                    London, EC1A 1BB
+                    {BUSINESS_ADDRESS.line1}<br />
+                    {BUSINESS_ADDRESS.line2}<br />
+                    {BUSINESS_ADDRESS.line3}<br />
+                    {BUSINESS_ADDRESS.postcode}
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-medium text-brand-charcoal mb-2">Customer Service</h3>
-                  <p className="text-gray-600 mb-1">Email: support@urbanwholesalers.co.uk</p>
+                  <p className="text-gray-600 mb-1">Email: {BUSINESS_EMAIL}</p>
                   <p className="text-gray-600 mb-1">Phone: +44 123 456 7890</p>
                   <p className="text-gray-600">Hours: Monday to Friday, 9am - 5pm</p>
                 </div>

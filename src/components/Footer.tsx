@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Globe, Mail, Phone } from "lucide-react";
 import { withBase } from "@/lib/utils";
+import { BUSINESS_EMAIL } from "@/lib/business";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,13 +45,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Categories</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/products?category=food" className="text-gray-300 hover:text-brand-teal transition-colors">
-                  Food
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=vapes" className="text-gray-300 hover:text-brand-teal transition-colors">
-                  Vapes
+                <Link to="/products?category=sandwiches" className="text-gray-300 hover:text-brand-teal transition-colors">
+                  Sandwiches & Wraps
                 </Link>
               </li>
               <li>
@@ -59,13 +55,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=sandwiches" className="text-gray-300 hover:text-brand-teal transition-colors">
-                  Sandwiches
+                <Link to="/products?category=carrier-bags" className="text-gray-300 hover:text-brand-teal transition-colors">
+                  Carrier Bags
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=drinks" className="text-gray-300 hover:text-brand-teal transition-colors">
-                  Drinks
+                <Link to="/products?category=smoke-requisites" className="text-gray-300 hover:text-brand-teal transition-colors">
+                  Smoke Requisites
+                </Link>
+              </li>
+              <li>
+                <Link to="/products" className="text-gray-300 hover:text-brand-teal transition-colors">
+                  View All Products
                 </Link>
               </li>
             </ul>
@@ -73,7 +74,7 @@ const Footer = () => {
           
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <p className="text-gray-300 mb-2">Customer Service: support@urbanwholesalers.co.uk</p>
+            <p className="text-gray-300 mb-2">Customer Service: {BUSINESS_EMAIL}</p>
             <p className="text-gray-300 mb-2">Phone: +44 123 456 7890</p>
             <p className="text-gray-300">Monday - Friday: 9am - 5pm</p>
           </div>

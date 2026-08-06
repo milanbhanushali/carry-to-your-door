@@ -56,6 +56,7 @@ export default {
           red: '#ea384c',
           black: '#000000',
           charcoal: '#333',
+          teal: '#0f766e',
         },
       },
       borderRadius: {

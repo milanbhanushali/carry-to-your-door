@@ -3,18 +3,18 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { 
-  Form, 
-  FormControl, 
-  FormField, 
-  FormItem, 
-  FormLabel, 
-  FormMessage 
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { 
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -22,8 +22,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { MessageCircle } from "lucide-react";
+import { buildWhatsAppLink } from "@/lib/business";
 
 const formSchema = z.object({
+  contactName: z.string().min(2, {
+    message: "Please enter your name.",
+  }),
+  phone: z.string().min(7, {
+    message: "Please enter a valid contact phone number.",
+  }),
   shopName: z.string().min(2, {
     message: "Shop name must be at least 2 characters.",
   }),
@@ -38,14 +46,21 @@ const formSchema = z.object({
 
 type OrderFormValues = z.infer<typeof formSchema>;
 
+const frequencyLabels: Record<OrderFormValues["deliveryFrequency"], string> = {
+  weekly: "Weekly",
+  "twice-weekly": "Twice Weekly",
+  monthly: "Monthly",
+};
+
 const OrderForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<OrderFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      contactName: "",
+      phone: "",
       shopName: "",
       postcode: "",
       deliveryFrequency: "weekly",
@@ -53,61 +68,50 @@ const OrderForm = () => {
     },
   });
 
-  const onSubmit = async (data: OrderFormValues) => {
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form data submitted:', data);
-      
-      // Show success state
-      setIsSuccess(true);
-      toast({
-        title: "Order Submitted Successfully",
-        description: "We'll be in touch shortly to confirm your delivery details.",
-      });
-      
-      // Reset form
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Error Submitting Order",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+  const onSubmit = (data: OrderFormValues) => {
+    // There's no checkout on this site - orders go straight to WhatsApp so
+    // our team can confirm stock and pricing directly with the shop owner.
+    const message = [
+      `New order enquiry from ${data.shopName}`,
+      `Contact: ${data.contactName} (${data.phone})`,
+      `Postcode: ${data.postcode}`,
+      `Preferred delivery: ${frequencyLabels[data.deliveryFrequency]}`,
+      data.notes ? `Notes: ${data.notes}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.open(buildWhatsAppLink(message), "_blank", "noopener,noreferrer");
+
+    setIsSuccess(true);
+    toast({
+      title: "WhatsApp Opened",
+      description: "Send the pre-filled message and our team will confirm your order shortly.",
+    });
   };
 
   if (isSuccess) {
     return (
       <div className="bg-white p-8 rounded-lg shadow-sm text-center">
         <div className="mb-6 mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            className="text-green-600"
-          >
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
+          <MessageCircle className="h-7 w-7 text-green-600" />
         </div>
-        <h2 className="text-2xl font-bold text-brand-charcoal mb-2">Thank You for Your Order!</h2>
+        <h2 className="text-2xl font-bold text-brand-charcoal mb-2">Almost There!</h2>
         <p className="text-gray-600 mb-8">
-          We've received your order request and our team will be in touch shortly to confirm your
-          delivery details and finalize your order.
+          We've opened WhatsApp with your order details pre-filled. Just hit send and our team
+          will confirm your order and delivery details shortly. If WhatsApp didn't open, you can{" "}
+          <a
+            href={buildWhatsAppLink("Hi, I'd like to place a wholesale order.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-red font-medium hover:underline"
+          >
+            tap here to open it manually
+          </a>
+          .
         </p>
-        <Button 
-          onClick={() => setIsSuccess(false)} 
+        <Button
+          onClick={() => { setIsSuccess(false); form.reset(); }}
           className="bg-brand-teal hover:bg-brand-teal/90"
         >
           Place Another Order
@@ -118,9 +122,43 @@ const OrderForm = () => {
 
   return (
     <div className="bg-white p-8 rounded-lg shadow-sm">
-      <h2 className="text-2xl font-bold text-brand-charcoal mb-6">Place Your Order</h2>
+      <h2 className="text-2xl font-bold text-brand-charcoal mb-2">Place Your Order</h2>
+      <p className="text-sm text-gray-500 mb-6">
+        We don't take orders through the website directly. Fill this in and we'll open WhatsApp
+        with your details ready to send to our team.
+      </p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <FormField
+              control={form.control}
+              name="contactName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-brand-charcoal">Your Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter your name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-brand-charcoal">Contact Phone</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g. 07123 456789" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
           <FormField
             control={form.control}
             name="shopName"
@@ -134,7 +172,7 @@ const OrderForm = () => {
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="postcode"
@@ -148,15 +186,15 @@ const OrderForm = () => {
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="deliveryFrequency"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-brand-charcoal">Delivery Frequency</FormLabel>
-                <Select 
-                  onValueChange={field.onChange} 
+                <Select
+                  onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
                   <FormControl>
@@ -174,7 +212,7 @@ const OrderForm = () => {
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="notes"
@@ -182,23 +220,23 @@ const OrderForm = () => {
               <FormItem>
                 <FormLabel className="text-brand-charcoal">Notes / Special Requests</FormLabel>
                 <FormControl>
-                  <Textarea 
+                  <Textarea
                     placeholder="Any special requirements or requests for your delivery"
                     className="resize-none"
-                    {...field} 
+                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          
-          <Button 
-            type="submit" 
-            disabled={isSubmitting}
-            className="w-full bg-brand-teal hover:bg-brand-teal/90"
+
+          <Button
+            type="submit"
+            className="w-full bg-green-600 hover:bg-green-700"
           >
-            {isSubmitting ? "Submitting..." : "Submit Order Request"}
+            <MessageCircle className="mr-2 h-4 w-4" />
+            Send Order via WhatsApp
           </Button>
         </form>
       </Form>

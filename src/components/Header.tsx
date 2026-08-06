@@ -13,13 +13,13 @@ const Header = () => {
 
   return (
     <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img 
+          <Link to="/" className="flex items-center shrink-0">
+            <img
               src={withBase("/lovable-uploads/2cd892e9-1795-47cd-a959-5ff00dcda8aa.png")}
-              alt="Urban Wholesalers Ltd" 
-              className="h-16"
+              alt="Urban Wholesalers Ltd"
+              className="h-20 md:h-32 w-auto"
             />
           </Link>
 
@@ -47,8 +47,10 @@ const Header = () => {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
             
-            <Button variant="default" className="ml-4 bg-brand-red hover:bg-brand-red/90">
-              <ShoppingCart className="mr-2 h-4 w-4" /> Order Now
+            <Button asChild variant="default" className="ml-4 bg-brand-red hover:bg-brand-red/90">
+              <Link to="/order">
+                <ShoppingCart className="mr-2 h-4 w-4" /> Order Now
+              </Link>
             </Button>
           </div>
         </div>
