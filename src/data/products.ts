@@ -538,13 +538,13 @@ export const products: Product[] = [
   },
   {
     id: "64",
-    name: "Island Delight Lamb Jamaican Pattie",
+    name: "Island Delight Curried Lamb Jamaican Pattie",
     category: "pies",
     brand: "Island Delight",
     image: "/products/island-delight-lamb-pattie.webp",
     price: 0,
     packSize: "Single pattie",
-    description: "Spicy seasoned lamb filling in an authentic Jamaican short crust pastry."
+    description: "Spicy curried lamb filling in an authentic Jamaican flaky pastry."
   },
   {
     id: "65",
@@ -565,6 +565,16 @@ export const products: Product[] = [
     price: 0,
     packSize: "Single pattie",
     description: "Spicy seasoned salt fish filling in an authentic Jamaican short crust pastry."
+  },
+  {
+    id: "67",
+    name: "Island Delight Chilli Beef Jamaican Pattie",
+    category: "pies",
+    brand: "Island Delight",
+    image: "/products/island-delight-chilli-beef-pattie.webp",
+    price: 0,
+    packSize: "Single pattie",
+    description: "Spicy chilli beef filling in an authentic Jamaican flaky pastry."
   }
 ];
 
