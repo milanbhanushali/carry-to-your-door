@@ -451,6 +451,77 @@ export const products: Product[] = [
     price: 0,
     packSize: "400g",
     description: "Soft sponge cake with apricot jam and cocoa cream filling, coated in chocolate. Product of Italy."
+  },
+  // ---- Coolmore (West Cork Bakery, Ireland, est. 1988) ----
+  {
+    id: "47",
+    name: "Coolmore Chocolate Orange Cake",
+    category: "cakes",
+    brand: "Coolmore",
+    image: "/products/coolmore-chocolate-orange.webp",
+    price: 0,
+    packSize: "Whole cake",
+    description: "Zingy and zesty chocolate sponge with orange, finished in chocolate coating and candied orange pieces."
+  },
+  {
+    id: "48",
+    name: "Coolmore Classic Carrot Cake",
+    category: "cakes",
+    brand: "Coolmore",
+    image: "/products/coolmore-carrot-cake.webp",
+    price: 0,
+    packSize: "Whole cake",
+    description: "Sweet and tasty carrot sponge topped with cream cheese icing and chopped nuts."
+  },
+  {
+    id: "49",
+    name: "Coolmore Bubblegum Cake",
+    category: "cakes",
+    brand: "Coolmore",
+    image: "/products/coolmore-bubblegum-cake.webp",
+    price: 0,
+    packSize: "Whole cake",
+    description: "Deliciously sweet vanilla sponge topped with pink bubblegum-flavoured icing and sprinkles."
+  },
+  {
+    id: "50",
+    name: "Coolmore Chocolate Fudge Cake",
+    category: "cakes",
+    brand: "Coolmore",
+    image: "/products/coolmore-chocolate-fudge.webp",
+    price: 0,
+    packSize: "Whole cake",
+    description: "Deliciously sweet chocolate fudge sponge coated in rich chocolate icing. Gold winner, Blas na hEireann Irish Food Awards 2018."
+  },
+  {
+    id: "51",
+    name: "Coolmore Coffee & Walnut Cake",
+    category: "cakes",
+    brand: "Coolmore",
+    image: "/products/coolmore-coffee-walnut.webp",
+    price: 0,
+    packSize: "Whole cake",
+    description: "Smooth and sweet coffee sponge topped with coffee icing, walnuts and chocolate shavings."
+  },
+  {
+    id: "52",
+    name: "Coolmore Lemon Cake",
+    category: "cakes",
+    brand: "Coolmore",
+    image: "/products/coolmore-lemon-cake.webp",
+    price: 0,
+    packSize: "Whole cake",
+    description: "Tangy and tasty lemon sponge topped with a smooth lemon icing."
+  },
+  {
+    id: "53",
+    name: "Coolmore Red Velvet Cake",
+    category: "cakes",
+    brand: "Coolmore",
+    image: "/products/coolmore-red-velvet.webp",
+    price: 0,
+    packSize: "Whole cake",
+    description: "Smooth and rich red velvet sponge topped with a classic cream cheese icing."
   }
 ];
 
@@ -479,5 +550,11 @@ export const brands = [
     name: "Balconi",
     tagline: "Milano, Italy - 1953 - Italian sponge cakes and rollini",
     image: "/products/brand-balconi.webp"
+  },
+  {
+    slug: "Coolmore",
+    name: "Coolmore",
+    tagline: "West Cork Bakery, Ireland - Since 1988 - traditional Irish cakes",
+    image: "/products/brand-coolmore.webp"
   }
 ];
