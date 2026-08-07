@@ -188,14 +188,14 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-medium text-brand-charcoal mb-2">Customer Service</h3>
                   <p className="text-gray-600 mb-1">Email: {BUSINESS_EMAIL}</p>
-                  <p className="text-gray-600 mb-1">Phone: +44 123 456 7890</p>
+                  <p className="text-gray-600 mb-1">Phone: +44 7350 405313</p>
                   <p className="text-gray-600">Hours: Monday to Friday, 9am - 5pm</p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-medium text-brand-charcoal mb-2">Sales Enquiries</h3>
-                  <p className="text-gray-600 mb-1">Email: sales@urbanwholesalers.co.uk</p>
-                  <p className="text-gray-600">Phone: +44 123 456 7891</p>
+                  <p className="text-gray-600 mb-1">Email: {BUSINESS_EMAIL}</p>
+                  <p className="text-gray-600">Phone: +44 7350 405313</p>
                 </div>
               </div>
             </div>

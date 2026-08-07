@@ -4,16 +4,6 @@ import {
   LayoutGrid,
   Sandwich,
   CakeSlice,
-  ShoppingBag,
-  ScrollText,
-  Leaf,
-  Filter,
-  Zap,
-  Cigarette,
-  Flame,
-  Pill,
-  BatteryFull,
-  BatteryCharging,
   Home,
   PenTool,
   Warehouse,
@@ -24,16 +14,6 @@ export type ProductCategory =
   | "all"
   | "sandwiches"
   | "cakes"
-  | "carrier-bags"
-  | "rolling-papers"
-  | "raw-products"
-  | "filter-tips"
-  | "elf-pods"
-  | "smoke-requisites"
-  | "lighters"
-  | "medicines"
-  | "batteries"
-  | "ivg-pods"
   | "household"
   | "stationery"
   | "warehouse-sale"
@@ -51,16 +31,6 @@ const categories: { value: ProductCategory; label: string; icon: React.ReactNode
   { value: "all", label: "All Products", icon: <LayoutGrid className="w-4 h-4" /> },
   { value: "sandwiches", label: "Sandwiches & Wraps", icon: <Sandwich className="w-4 h-4" /> },
   { value: "cakes", label: "Cakes", icon: <CakeSlice className="w-4 h-4" /> },
-  { value: "carrier-bags", label: "Carrier Bags", icon: <ShoppingBag className="w-4 h-4" /> },
-  { value: "rolling-papers", label: "Rolling Papers", icon: <ScrollText className="w-4 h-4" /> },
-  { value: "raw-products", label: "Raw Products", icon: <Leaf className="w-4 h-4" /> },
-  { value: "filter-tips", label: "Filter Tips", icon: <Filter className="w-4 h-4" /> },
-  { value: "elf-pods", label: "ELF Pre‑Filled Pods", icon: <Zap className="w-4 h-4" /> },
-  { value: "smoke-requisites", label: "Smoke Requisites", icon: <Cigarette className="w-4 h-4" /> },
-  { value: "lighters", label: "Lighters", icon: <Flame className="w-4 h-4" /> },
-  { value: "medicines", label: "Medicines", icon: <Pill className="w-4 h-4" /> },
-  { value: "batteries", label: "Batteries", icon: <BatteryFull className="w-4 h-4" /> },
-  { value: "ivg-pods", label: "IVG 2400 Reload Pods", icon: <BatteryCharging className="w-4 h-4" /> },
   { value: "household", label: "House Hold Products", icon: <Home className="w-4 h-4" /> },
   { value: "stationery", label: "Stationery", icon: <PenTool className="w-4 h-4" /> },
   { value: "warehouse-sale", label: "Warehouse Sale", icon: <Warehouse className="w-4 h-4" /> },

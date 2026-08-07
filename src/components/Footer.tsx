@@ -55,13 +55,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=carrier-bags" className="text-gray-300 hover:text-brand-teal transition-colors">
-                  Carrier Bags
+                <Link to="/products?category=household" className="text-gray-300 hover:text-brand-teal transition-colors">
+                  House Hold Products
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=smoke-requisites" className="text-gray-300 hover:text-brand-teal transition-colors">
-                  Smoke Requisites
+                <Link to="/products?category=stationery" className="text-gray-300 hover:text-brand-teal transition-colors">
+                  Stationery
                 </Link>
               </li>
               <li>
@@ -75,7 +75,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <p className="text-gray-300 mb-2">Customer Service: {BUSINESS_EMAIL}</p>
-            <p className="text-gray-300 mb-2">Phone: +44 123 456 7890</p>
+            <p className="text-gray-300 mb-2">Phone: +44 7350 405313</p>
             <p className="text-gray-300">Monday - Friday: 9am - 5pm</p>
           </div>
         </div>

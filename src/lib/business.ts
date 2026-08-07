@@ -1,14 +1,9 @@
 // Shared business contact details used across the site (order form, contact
 // form, homepage WhatsApp section, footer links, etc.) so there's a single
 // place to update them.
-//
-// TODO: WHATSAPP_NUMBER is a placeholder. Replace it with Urban Wholesalers'
-// real WhatsApp Business number before going live - international format,
-// digits only, no "+" or spaces (e.g. a UK mobile 07123 456789 becomes
-// "447123456789").
-export const WHATSAPP_NUMBER = "447123456789";
+export const WHATSAPP_NUMBER = "447350405313"; // +44 7350 405313
 
-export const BUSINESS_EMAIL = "sales@urbanwholesalers.co.uk";
+export const BUSINESS_EMAIL = "milandama11@gmail.com";
 
 export const BUSINESS_ADDRESS = {
   line1: "Urban Wholesalers Ltd",
