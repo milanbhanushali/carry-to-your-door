@@ -23,11 +23,11 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card className="h-full flex flex-col overflow-hidden transition-all hover:shadow-lg hover:scale-[1.02] duration-300">
-      <div className="aspect-square overflow-hidden bg-gray-100">
+      <div className="aspect-square overflow-hidden bg-gray-100 flex items-center justify-center">
         <img
           src={withBase(product.image || "/placeholder.svg")}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 animate-fade-in"
+          className="w-full h-full object-contain transition-transform duration-500 hover:scale-110 animate-fade-in"
         />
       </div>
       <CardContent className="p-4 flex-1 flex flex-col">

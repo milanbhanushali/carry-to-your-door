@@ -47,11 +47,11 @@ const ProductDetail = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img 
+          <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square flex items-center justify-center">
+            <img
               src={withBase(product.image || "/placeholder.svg")}
               alt={product.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           
