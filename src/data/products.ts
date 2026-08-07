@@ -432,6 +432,139 @@ export const products: Product[] = [
     price: 0,
     packSize: "Whole cake",
     description: "Smooth and rich red velvet sponge topped with a classic cream cheese icing."
+  },
+  // ---- Peter's ("A Taste of Home") ----
+  {
+    id: "54",
+    name: "Peter's Cheesy Bean & Sausage Slice",
+    category: "pies",
+    brand: "Peter's",
+    image: "/products/peters-cheesy-bean-sausage.webp",
+    price: 0,
+    packSize: "Single slice",
+    description: "Cheesy beans and sausage pieces encased in golden puff pastry. Enjoy hot or cold."
+  },
+  {
+    id: "55",
+    name: "Peter's Chicken & Bacon Slice",
+    category: "pies",
+    brand: "Peter's",
+    image: "/products/peters-chicken-bacon.webp",
+    price: 0,
+    packSize: "Single slice",
+    description: "Chicken and bacon in a creamy sauce, encased in golden puff pastry. Enjoy hot or cold."
+  },
+  {
+    id: "56",
+    name: "Peter's Pork Sausage Roll",
+    category: "pies",
+    brand: "Peter's",
+    image: "/products/peters-pork-sausage-roll.webp",
+    price: 0,
+    packSize: "Single roll",
+    description: "Seasoned pork sausage meat wrapped in puff pastry. Keep refrigerated."
+  },
+  {
+    id: "57",
+    name: "Peter's Classic Steak Slice",
+    category: "pies",
+    brand: "Peter's",
+    image: "/products/peters-classic-steak.webp",
+    price: 0,
+    packSize: "Single slice",
+    description: "Tender steak in a rich, beefy gravy, encased in golden puff pastry."
+  },
+  // ---- Seriously Tasty ----
+  {
+    id: "58",
+    name: "Seriously Tasty Ham & Cheese Slice",
+    category: "pies",
+    brand: "Seriously Tasty",
+    image: "/products/seriously-tasty-ham-cheese.webp",
+    price: 1.25,
+    packSize: "Single slice",
+    description: "Ham and cheese encased in golden puff pastry. Ready to go, enjoy hot or cold."
+  },
+  {
+    id: "59",
+    name: "Seriously Tasty Cheese & Onion Slice",
+    category: "pies",
+    brand: "Seriously Tasty",
+    image: "/products/seriously-tasty-cheese-onion.webp",
+    price: 1.25,
+    packSize: "Single slice",
+    description: "Cheese and onion encased in golden puff pastry. Ready to go, enjoy hot or cold."
+  },
+  {
+    id: "60",
+    name: "Seriously Tasty Chicken & Mushroom Slice",
+    category: "pies",
+    brand: "Seriously Tasty",
+    image: "/products/seriously-tasty-chicken-mushroom.webp",
+    price: 1.25,
+    packSize: "Single slice",
+    description: "Chicken and mushroom in a creamy sauce, encased in golden puff pastry."
+  },
+  {
+    id: "61",
+    name: "Seriously Tasty Steak & Kidney Slice",
+    category: "pies",
+    brand: "Seriously Tasty",
+    image: "/products/seriously-tasty-steak-kidney.webp",
+    price: 0,
+    packSize: "Single slice",
+    description: "Steak and kidney in a rich gravy, encased in golden puff pastry. Ready to go."
+  },
+  {
+    id: "62",
+    name: "Seriously Tasty Sausage Roll",
+    category: "pies",
+    brand: "Seriously Tasty",
+    image: "/products/seriously-tasty-sausage-roll.webp",
+    price: 0,
+    packSize: "Single roll",
+    description: "Seasoned pork meat encased in puff pastry. Ready to go, enjoy hot or cold."
+  },
+  // ---- Island Delight (authentic Jamaican patties) ----
+  {
+    id: "63",
+    name: "Island Delight Chicken Jamaican Pattie",
+    category: "pies",
+    brand: "Island Delight",
+    image: "/products/island-delight-chicken-pattie.webp",
+    price: 0,
+    packSize: "Single pattie",
+    description: "Spicy seasoned chicken filling in an authentic Jamaican short crust pastry."
+  },
+  {
+    id: "64",
+    name: "Island Delight Lamb Jamaican Pattie",
+    category: "pies",
+    brand: "Island Delight",
+    image: "/products/island-delight-lamb-pattie.webp",
+    price: 0,
+    packSize: "Single pattie",
+    description: "Spicy seasoned lamb filling in an authentic Jamaican short crust pastry."
+  },
+  {
+    id: "65",
+    name: "Island Delight Vegetable Jamaican Pattie",
+    category: "pies",
+    brand: "Island Delight",
+    image: "/products/island-delight-vegetable-pattie.webp",
+    price: 0,
+    packSize: "Single pattie",
+    description: "Spicy seasoned vegetable filling in an authentic Jamaican short crust pastry. Vegan approved."
+  },
+  {
+    id: "66",
+    name: "Island Delight Salt Fish Jamaican Pattie",
+    category: "pies",
+    brand: "Island Delight",
+    image: "/products/island-delight-salt-fish-pattie.webp",
+    price: 0,
+    packSize: "Single pattie",
+    description: "Spicy seasoned salt fish filling in an authentic Jamaican short crust pastry."
   }
 ];
 
@@ -466,5 +599,23 @@ export const brands = [
     name: "Coolmore",
     tagline: "West Cork Bakery, Ireland - Since 1988 - traditional Irish cakes",
     image: "/products/brand-coolmore.webp"
+  },
+  {
+    slug: "Peter's",
+    name: "Peter's",
+    tagline: "A taste of home - savoury slices and sausage rolls",
+    image: "/products/brand-peters.webp"
+  },
+  {
+    slug: "Seriously Tasty",
+    name: "Seriously Tasty",
+    tagline: "Ready to go savoury slices and rolls, enjoy hot or cold",
+    image: "/products/brand-seriously-tasty.webp"
+  },
+  {
+    slug: "Island Delight",
+    name: "Island Delight",
+    tagline: "Authentic Jamaican patties, spicy and short crust",
+    image: "/products/brand-island-delight.webp"
   }
 ];
