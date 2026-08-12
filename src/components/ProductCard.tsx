@@ -27,6 +27,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <img
           src={withBase(product.image || "/placeholder.svg")}
           alt={product.name}
+          loading="lazy"
           className="w-full h-full object-contain transition-transform duration-500 hover:scale-110 animate-fade-in"
         />
       </div>

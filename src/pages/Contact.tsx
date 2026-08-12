@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import MainLayout from "@/layouts/MainLayout";
+import Seo from "@/components/Seo";
 import { buildMailtoLink, buildWhatsAppLink, BUSINESS_ADDRESS, BUSINESS_EMAIL } from "@/lib/business";
 import { MessageCircle } from "lucide-react";
 
@@ -35,6 +37,7 @@ type ContactFormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
@@ -49,6 +52,8 @@ const Contact = () => {
   const onSubmit = (data: ContactFormValues) => {
     // No backend on this site - hand the enquiry off to the visitor's own
     // email client, pre-filled and ready to send.
+    setIsSubmitting(true);
+
     const body = [
       data.message,
       "",
@@ -67,10 +72,18 @@ const Contact = () => {
     });
 
     form.reset();
+    // Brief disabled window so the button gives tactile feedback and can't
+    // be double-clicked while the OS launches the mail app.
+    window.setTimeout(() => setIsSubmitting(false), 1200);
   };
 
   return (
     <MainLayout>
+      <Seo
+        title="Contact Us"
+        description="Get in touch with Urban Wholesalers Ltd for questions about our products, delivery areas or wholesale pricing."
+        path="/contact"
+      />
       <div className="container mx-auto px-4 py-12">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-brand-charcoal mb-4">Contact Us</h1>
@@ -148,9 +161,10 @@ const Contact = () => {
                   
                   <Button
                     type="submit"
-                    className="w-full bg-brand-teal hover:bg-brand-teal/90"
+                    disabled={isSubmitting}
+                    className="w-full bg-brand-teal hover:bg-brand-teal/90 disabled:opacity-70"
                   >
-                    Send Message
+                    {isSubmitting ? "Opening Your Email App..." : "Send Message"}
                   </Button>
                 </form>
               </Form>

@@ -1,4 +1,5 @@
 import MainLayout from "@/layouts/MainLayout";
+import Seo from "@/components/Seo";
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,6 +22,11 @@ const Index = () => {
   
   return (
     <MainLayout>
+      <Seo
+        title="Urban Wholesalers Ltd"
+        description="Urban Wholesalers Ltd supplies off-licence shops across the UK with wholesale food, drinks, vapes, cakes and household products, delivered direct to your door."
+        path="/"
+      />
       <Hero />
 
       {/* Shop by Brand Section */}

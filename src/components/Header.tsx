@@ -17,9 +17,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center shrink-0">
             <img
-              src={withBase("/lovable-uploads/2cd892e9-1795-47cd-a959-5ff00dcda8aa.png")}
+              src={withBase("/lovable-uploads/header-logo.webp")}
               alt="Urban Wholesalers Ltd"
               className="h-20 md:h-32 w-auto"
+              fetchPriority="high"
             />
           </Link>
 

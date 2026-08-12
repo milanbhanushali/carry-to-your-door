@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
 import { Globe, Mail, Phone } from "lucide-react";
 import { withBase } from "@/lib/utils";
-import { BUSINESS_EMAIL } from "@/lib/business";
+import { BUSINESS_ADDRESS, BUSINESS_EMAIL } from "@/lib/business";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-brand-black text-white">
+    <footer className="bg-brand-black text-white pb-20 lg:pb-0">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <img 
+            <img
               src={withBase("/lovable-uploads/710d3246-75a5-472c-a7a6-83ddb96da13e.png")}
-              alt="Urban Wholesalers Logo" 
+              alt="Urban Wholesalers Logo"
+              loading="lazy"
               className="h-12 mb-4"
             />
             <p className="text-gray-300 mb-4">Cash and carry at your door.</p>
@@ -79,14 +80,26 @@ const Footer = () => {
           
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <p className="text-gray-300 mb-2">
+              {BUSINESS_ADDRESS.line1}, {BUSINESS_ADDRESS.line2},<br />
+              {BUSINESS_ADDRESS.line3}, {BUSINESS_ADDRESS.postcode}
+            </p>
             <p className="text-gray-300 mb-2">Customer Service: {BUSINESS_EMAIL}</p>
             <p className="text-gray-300 mb-2">Phone: +44 7350 405313</p>
             <p className="text-gray-300">Monday - Friday: 9am - 5pm</p>
           </div>
         </div>
-        
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-gray-300">
           <p>&copy; {currentYear} Urban Wholesalers Ltd. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link to="/privacy" className="hover:text-brand-teal transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="hover:text-brand-teal transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

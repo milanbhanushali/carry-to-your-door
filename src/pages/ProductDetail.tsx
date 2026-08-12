@@ -1,17 +1,25 @@
 
 import { useParams, Link } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
+import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
 import { withBase } from "@/lib/utils";
 
+const SITE_URL = "https://urbanwholesalers.co.uk";
+
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const product = products.find(p => p.id === id);
-  
+
   if (!product) {
     return (
       <MainLayout>
+        <Seo
+          title="Product Not Found"
+          description="The product you're looking for doesn't seem to exist."
+          noindex
+        />
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-3xl font-bold text-brand-charcoal mb-4">Product Not Found</h1>
           <p className="text-gray-600 mb-8">The product you're looking for doesn't seem to exist.</p>
@@ -22,9 +30,15 @@ const ProductDetail = () => {
       </MainLayout>
     );
   }
-  
+
   return (
     <MainLayout>
+      <Seo
+        title={product.name}
+        description={`${product.description} Pack size: ${product.packSize}.`}
+        path={`/products/${product.id}`}
+        image={`${SITE_URL}${withBase(product.image || "/placeholder.svg")}`}
+      />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Link to="/products" className="text-brand-teal hover:underline flex items-center">

@@ -1,8 +1,14 @@
 import MainLayout from "@/layouts/MainLayout";
+import Seo from "@/components/Seo";
 
 const About = () => {
   return (
     <MainLayout>
+      <Seo
+        title="About Us"
+        description="Urban Wholesalers Ltd is a trusted B2B wholesale supplier delivering food, drinks and household products directly to off-licence stores across the UK."
+        path="/about"
+      />
       <div className="container mx-auto px-4 py-12">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-brand-charcoal mb-4">About Urban Wholesalers Ltd</h1>
@@ -25,9 +31,10 @@ const About = () => {
             </p>
           </div>
           <div className="bg-gray-200 h-80 rounded-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop" 
-              alt="Urban Wholesalers Team" 
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop"
+              alt="Urban Wholesalers Team"
+              loading="lazy"
               className="w-full h-full object-cover rounded-lg"
             />
           </div>

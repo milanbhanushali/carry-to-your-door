@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
+import Seo from "@/components/Seo";
 import CategoryFilter, { ProductCategory } from "@/components/CategoryFilter";
 import ProductCard, { Product } from "@/components/ProductCard";
 import { products } from "@/data/products";
@@ -47,6 +48,11 @@ const Products = () => {
   
   return (
     <MainLayout>
+      <Seo
+        title={brandParam ? `${brandParam} Products` : "Product Catalog"}
+        description="Browse Urban Wholesalers Ltd's full range of wholesale food, drinks, cakes, pies, burgers, household and stationery products for your off-licence store."
+        path="/products"
+      />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-brand-charcoal mb-2">

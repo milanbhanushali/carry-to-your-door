@@ -54,6 +54,7 @@ const frequencyLabels: Record<OrderFormValues["deliveryFrequency"], string> = {
 
 const OrderForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<OrderFormValues>({
@@ -71,6 +72,8 @@ const OrderForm = () => {
   const onSubmit = (data: OrderFormValues) => {
     // There's no checkout on this site - orders go straight to WhatsApp so
     // our team can confirm stock and pricing directly with the shop owner.
+    setIsSubmitting(true);
+
     const message = [
       `New order enquiry from ${data.shopName}`,
       `Contact: ${data.contactName} (${data.phone})`,
@@ -84,6 +87,7 @@ const OrderForm = () => {
     window.open(buildWhatsAppLink(message), "_blank", "noopener,noreferrer");
 
     setIsSuccess(true);
+    setIsSubmitting(false);
     toast({
       title: "WhatsApp Opened",
       description: "Send the pre-filled message and our team will confirm your order shortly.",
@@ -233,10 +237,11 @@ const OrderForm = () => {
 
           <Button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700"
+            disabled={isSubmitting}
+            className="w-full bg-green-600 hover:bg-green-700 disabled:opacity-70"
           >
             <MessageCircle className="mr-2 h-4 w-4" />
-            Send Order via WhatsApp
+            {isSubmitting ? "Opening WhatsApp..." : "Send Order via WhatsApp"}
           </Button>
         </form>
       </Form>

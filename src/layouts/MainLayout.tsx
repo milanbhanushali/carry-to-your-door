@@ -2,6 +2,7 @@
 import { ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickyMobileCta from "@/components/StickyMobileCta";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         {children}
       </main>
       <Footer />
+      <StickyMobileCta />
     </div>
   );
 };

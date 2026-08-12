@@ -29,9 +29,10 @@ const Hero = () => {
           <div className="relative">
             <div className="rounded-lg aspect-[4/3] overflow-hidden">
               <img 
-                src={withBase("/lovable-uploads/37b5feae-0dcc-4b5e-b8f8-24e0a4fabd5b.png")}
-                alt="Urban Wholesalers delivery service in action" 
+                src={withBase("/lovable-uploads/hero-delivery.webp")}
+                alt="Urban Wholesalers delivery service in action"
                 className="w-full h-full object-cover"
+                fetchPriority="high"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
