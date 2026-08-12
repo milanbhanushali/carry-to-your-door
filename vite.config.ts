@@ -5,9 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Base path for GitHub Pages (repo is served from /carry-to-your-door/).
-  // Local dev still runs at the root "/".
-  base: mode === "production" ? "/carry-to-your-door/" : "/",
+  // Site is hosted at the domain root (urbanwholesalers.co.uk), so assets
+  // are always served from "/" in both dev and production.
+  base: "/",
   server: {
     host: "::",
     port: 8080,

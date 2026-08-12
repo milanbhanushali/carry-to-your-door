@@ -1,0 +1,27 @@
+# Enable rewrite engine for client-side (React Router) routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Don't rewrite requests for real files (assets, images, etc.). Note: we
+  # deliberately do NOT exclude directories here, because the "/products"
+  # React route collides with the real "/products" image folder — excluding
+  # directories would make Apache try to serve that folder's listing (403)
+  # instead of routing to the React app.
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  # Send everything else to index.html so React Router can handle it
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Sensible caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>

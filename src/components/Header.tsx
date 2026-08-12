@@ -24,26 +24,26 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-brand-charcoal hover:text-brand-red transition-colors">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <Link to="/" className="text-brand-charcoal hover:text-brand-red transition-colors whitespace-nowrap">
               Home
             </Link>
-            <Link to="/products" className="text-brand-charcoal hover:text-brand-red transition-colors">
+            <Link to="/products" className="text-brand-charcoal hover:text-brand-red transition-colors whitespace-nowrap">
               Products
             </Link>
-            <Link to="/order" className="text-brand-charcoal hover:text-brand-red transition-colors">
+            <Link to="/order" className="text-brand-charcoal hover:text-brand-red transition-colors whitespace-nowrap">
               Place Order
             </Link>
-            <Link to="/about" className="text-brand-charcoal hover:text-brand-red transition-colors">
+            <Link to="/about" className="text-brand-charcoal hover:text-brand-red transition-colors whitespace-nowrap">
               About Us
             </Link>
-            <Link to="/contact" className="text-brand-charcoal hover:text-brand-red transition-colors">
+            <Link to="/contact" className="text-brand-charcoal hover:text-brand-red transition-colors whitespace-nowrap">
               Contact
             </Link>
           </nav>
 
           <div className="flex items-center">
-            <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
+            <Button variant="ghost" size="icon" className="lg:hidden" onClick={toggleMenu}>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
             
@@ -58,7 +58,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white">
+        <div className="lg:hidden bg-white">
           <div className="px-4 py-2 space-y-1">
             <Link 
               to="/" 

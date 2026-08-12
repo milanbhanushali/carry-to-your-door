@@ -121,7 +121,7 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel className="text-brand-charcoal">Phone Number (Optional)</FormLabel>
                         <FormControl>
-                          <Input placeholder="Enter your phone number" {...field} />
+                          <Input type="tel" inputMode="tel" placeholder="Enter your phone number" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

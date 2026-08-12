@@ -9,6 +9,7 @@ import {
   PenTool,
   Warehouse,
   Shapes,
+  Beef,
 } from "lucide-react";
 
 export type ProductCategory =
@@ -16,6 +17,7 @@ export type ProductCategory =
   | "sandwiches"
   | "cakes"
   | "pies"
+  | "burgers"
   | "household"
   | "stationery"
   | "warehouse-sale"
@@ -34,6 +36,7 @@ const categories: { value: ProductCategory; label: string; icon: React.ReactNode
   { value: "sandwiches", label: "Sandwiches & Wraps", icon: <Sandwich className="w-4 h-4" /> },
   { value: "cakes", label: "Cakes", icon: <CakeSlice className="w-4 h-4" /> },
   { value: "pies", label: "Pies & Pastries", icon: <Croissant className="w-4 h-4" /> },
+  { value: "burgers", label: "Burgers & Hot Dogs", icon: <Beef className="w-4 h-4" /> },
   { value: "household", label: "House Hold Products", icon: <Home className="w-4 h-4" /> },
   { value: "stationery", label: "Stationery", icon: <PenTool className="w-4 h-4" /> },
   { value: "warehouse-sale", label: "Warehouse Sale", icon: <Warehouse className="w-4 h-4" /> },

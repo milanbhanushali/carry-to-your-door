@@ -151,7 +151,7 @@ const OrderForm = () => {
                 <FormItem>
                   <FormLabel className="text-brand-charcoal">Contact Phone</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g. 07123 456789" {...field} />
+                    <Input type="tel" inputMode="tel" placeholder="e.g. 07123 456789" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

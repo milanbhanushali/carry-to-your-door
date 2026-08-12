@@ -61,23 +61,23 @@ export const products: Product[] = [
   },
   {
     id: "17",
-    name: "Snacksters Cheese & Pickle",
+    name: "Snacksters Chunky Egg Mayo",
     category: "sandwiches",
     brand: "Snacksters",
-    image: "/products/snacksters-cheese-pickle.webp",
+    image: "/products/snacksters-egg-mayo.webp",
     price: 1.25,
     packSize: "Single sandwich",
-    description: "Mature cheese with tangy pickle on oatmeal bread. Suitable for vegetarians."
+    description: "Chunky hard boiled egg in mayonnaise on oatmeal bread. Suitable for vegetarians."
   },
   {
     id: "18",
-    name: "Snacksters Ham & Cheese",
+    name: "Snacksters Cheese & Ham",
     category: "sandwiches",
     brand: "Snacksters",
-    image: "/products/snacksters-ham-cheese.webp",
+    image: "/products/snacksters-cheese-ham.webp",
     price: 1.35,
     packSize: "Single sandwich",
-    description: "Cooked formed ham pieces and grated cheese in mayonnaise on oatmeal bread."
+    description: "Sliced cooked formed ham with added water and sliced cheese with mayonnaise on oatmeal bread."
   },
   {
     id: "19",
@@ -88,6 +88,16 @@ export const products: Product[] = [
     price: 1.35,
     packSize: "Single sandwich",
     description: "Tuna and mayonnaise on oatmeal bread. A lunchtime best seller."
+  },
+  {
+    id: "78",
+    name: "Snacksters Chicken & Bacon",
+    category: "sandwiches",
+    brand: "Snacksters",
+    image: "/products/snacksters-chicken-bacon.webp",
+    price: 1.35,
+    packSize: "Single sandwich",
+    description: "Cooked chicken and bacon pieces in mayonnaise on oatmeal bread."
   },
   // ---- Target A Snack sandwiches & wraps ----
   {
@@ -575,6 +585,107 @@ export const products: Product[] = [
     price: 0,
     packSize: "Single pattie",
     description: "Spicy chilli beef filling in an authentic Jamaican flaky pastry."
+  },
+  // ---- Rustlers (flame grilled, microwaveable burgers & hot dogs) ----
+  {
+    id: "68",
+    name: "Rustlers The Smokey BBQ Rib",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-bbq-rib.webp",
+    price: 0,
+    packSize: "Single burger",
+    description: "Flame grilled rib-shaped patty with our smokey BBQ sauce in a soft bun. Made with 100% British & Irish pork."
+  },
+  {
+    id: "69",
+    name: "Rustlers Classic 2x Hot Dog",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-hotdog-2x.webp",
+    price: 0,
+    packSize: "2 hot dogs",
+    description: "Classic hot dogs with tomato ketchup and mild American style mustard."
+  },
+  {
+    id: "70",
+    name: "Rustlers 2x Cheese Burger",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-cheese-burger-2x.webp",
+    price: 0,
+    packSize: "2 burgers",
+    description: "Two flame grilled cheeseburgers with our signature sauce. Made with 100% British & Irish beef."
+  },
+  {
+    id: "71",
+    name: "Rustlers The Mighty Double Decker",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-double-decker.webp",
+    price: 0,
+    packSize: "Single burger",
+    description: "2 flame grilled beef burgers, cheese and our signature sauce stacked in a soft bun. Made with 100% British & Irish beef."
+  },
+  {
+    id: "72",
+    name: "Rustlers Southern Fried 2x Chicken Burger",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-chicken-burger-2x.webp",
+    price: 0,
+    packSize: "2 burgers",
+    description: "Southern fried chicken burgers with lightly peppered mayonnaise. Made with 100% chicken breast."
+  },
+  {
+    id: "73",
+    name: "Rustlers The Classic Quarter Pounder",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-quarter-pounder.webp",
+    price: 0,
+    packSize: "Single burger",
+    description: "Flame grilled quarter pound beef burger with cheese and our signature sauce. Made with 100% British & Irish beef."
+  },
+  {
+    id: "74",
+    name: "Rustlers 2x BBQ Rib Burger",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-bbq-rib-burger-2x.webp",
+    price: 0,
+    packSize: "2 burgers",
+    description: "Two flame grilled rib-shaped patties with our smokey BBQ sauce. Made with 100% British & Irish pork."
+  },
+  {
+    id: "75",
+    name: "Rustlers Sausage Muffin",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-sausage-muffin.webp",
+    price: 0,
+    packSize: "Single muffin",
+    description: "All day breakfast sausage patty with cheese and tomato ketchup in a toasted muffin. Made with 100% British & Irish pork."
+  },
+  {
+    id: "76",
+    name: "Rustlers The Deluxe Bacon Cheeseburger",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-deluxe-bacon-cheeseburger.webp",
+    price: 0,
+    packSize: "Single burger",
+    description: "Flame grilled beef burger with bacon, cheese and our signature sauce in a soft bun."
+  },
+  {
+    id: "77",
+    name: "Rustlers The Meatless Maverick Burger",
+    category: "burgers",
+    brand: "Rustlers",
+    image: "/products/rustlers-vegetarian-burger.webp",
+    price: 0,
+    packSize: "Single burger",
+    description: "100% plant based patty with cheese and our signature sauce. 100% veggie."
   }
 ];
 
@@ -627,5 +738,11 @@ export const brands = [
     name: "Island Delight",
     tagline: "Authentic Jamaican patties, spicy and short crust",
     image: "/products/brand-island-delight.webp"
+  },
+  {
+    slug: "Rustlers",
+    name: "Rustlers",
+    tagline: "Flame grilled burgers & hot dogs, ready in minutes",
+    image: "/products/brand-rustlers.webp"
   }
 ];
