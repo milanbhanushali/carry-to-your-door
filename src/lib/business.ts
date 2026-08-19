@@ -1,9 +1,12 @@
 // Shared business contact details used across the site (order form, contact
 // form, homepage WhatsApp section, footer links, etc.) so there's a single
 // place to update them.
-export const WHATSAPP_NUMBER = "447350405313"; // +44 7350 405313
+export const WHATSAPP_NUMBER = "447415633330"; // +44 7415 633330
 
-export const BUSINESS_EMAIL = "milandama11@gmail.com";
+/** Human-readable phone number, for display in text (not links). */
+export const BUSINESS_PHONE_DISPLAY = "+44 7415 633330";
+
+export const BUSINESS_EMAIL = "urbanwholesalers@hotmail.co.uk";
 
 export const BUSINESS_ADDRESS = {
   line1: "Urban Wholesalers Ltd",

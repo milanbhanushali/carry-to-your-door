@@ -686,6 +686,126 @@ export const products: Product[] = [
     price: 0,
     packSize: "Single burger",
     description: "100% plant based patty with cheese and our signature sauce. 100% veggie."
+  },
+  {
+    id: "79",
+    name: "Fabian Focaccia Speck e Provola Affumicata",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-focaccia-speck-provola.webp",
+    price: 0,
+    packSize: "Single focaccia",
+    description: "Italian focaccia filled with speck and smoked provola cheese. Baked and filled, ready to eat."
+  },
+  {
+    id: "80",
+    name: "Fabian Piadina Prosciutto Crudo e Mozzarella",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-piadina-crudo-mozzarella.webp",
+    price: 0,
+    packSize: "Single piadina",
+    description: "Traditional Italian piadina flatbread filled with prosciutto crudo and mozzarella."
+  },
+  {
+    id: "81",
+    name: "Fabian Piadina Prosciutto Cotto e Formaggio",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-piadina-cotto-formaggio.webp",
+    price: 0,
+    packSize: "Single piadina",
+    description: "Traditional Italian piadina flatbread filled with cooked ham and cheese."
+  },
+  {
+    id: "82",
+    name: "Fabian 3 Mini Brioches Salate - Salame",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-mini-brioches-salame.webp",
+    price: 0,
+    packSize: "Pack of 3 mini brioches",
+    description: "Three soft savoury mini brioche rolls filled with Italian salame."
+  },
+  {
+    id: "83",
+    name: "Fabian 3 Mini Brioches Salate - Prosciutto Cotto",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-mini-brioches-prosciutto-cotto.webp",
+    price: 0,
+    packSize: "Pack of 3 mini brioches",
+    description: "Three soft savoury mini brioche rolls filled with cooked ham."
+  },
+  {
+    id: "84",
+    name: "Fabian Pizza Margherita",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-pizza-margherita.webp",
+    price: 0,
+    packSize: "Single pizza",
+    description: "Classic Italian Margherita pizza, ready to heat and serve."
+  },
+  {
+    id: "85",
+    name: "Fabian Tramezzino Londra",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-tramezzino-londra.webp",
+    price: 0,
+    packSize: "170g, single sandwich",
+    description: "Italian tramezzino sandwich with pulled chicken, crispy bacon and egg mayo."
+  },
+  {
+    id: "86",
+    name: "Fabian Tramezzino Dallas",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-tramezzino-dallas.webp",
+    price: 0,
+    packSize: "170g, single sandwich",
+    description: "Italian tramezzino sandwich with pulled pork, BBQ sauce and red onion."
+  },
+  {
+    id: "87",
+    name: "Fabian Tramezzino New York",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-tramezzino-new-york.webp",
+    price: 0,
+    packSize: "170g, single sandwich",
+    description: "Italian tramezzino sandwich with pastrami, mustard and gherkins."
+  },
+  {
+    id: "88",
+    name: "Fabian Tramezzino Istanbul",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-tramezzino-istanbul.webp",
+    price: 0,
+    packSize: "170g, single sandwich",
+    description: "Italian tramezzino sandwich with kebab, tomatoes and red onion."
+  },
+  {
+    id: "89",
+    name: "Fabian Tramezzino Petra",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-tramezzino-petra.webp",
+    price: 0,
+    packSize: "170g, single sandwich",
+    description: "Italian tramezzino sandwich with hummus, Taggiasca olives, sun-dried tomatoes and capers. Suitable for vegetarians."
+  },
+  {
+    id: "90",
+    name: "Fabian Tramezzino Mumbai",
+    category: "sandwiches",
+    brand: "Fabian",
+    image: "/products/fabian-tramezzino-mumbai.webp",
+    price: 0,
+    packSize: "160g, single sandwich",
+    description: "Italian tramezzino sandwich with plant-based veggie bites, curry sauce and tomatoes. Suitable for vegetarians."
   }
 ];
 
@@ -744,5 +864,11 @@ export const brands = [
     name: "Rustlers",
     tagline: "Flame grilled burgers & hot dogs, ready in minutes",
     image: "/products/brand-rustlers.webp"
+  },
+  {
+    slug: "Fabian",
+    name: "Fabian",
+    tagline: "La Bottega del Panino - sfornati e farciti, Italian sandwiches and piadine",
+    image: "/products/brand-fabian.webp"
   }
 ];

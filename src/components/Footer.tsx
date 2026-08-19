@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Globe, Mail, Phone } from "lucide-react";
 import { withBase } from "@/lib/utils";
-import { BUSINESS_ADDRESS, BUSINESS_EMAIL } from "@/lib/business";
+import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE_DISPLAY } from "@/lib/business";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -85,7 +85,7 @@ const Footer = () => {
               {BUSINESS_ADDRESS.line3}, {BUSINESS_ADDRESS.postcode}
             </p>
             <p className="text-gray-300 mb-2">Customer Service: {BUSINESS_EMAIL}</p>
-            <p className="text-gray-300 mb-2">Phone: +44 7350 405313</p>
+            <p className="text-gray-300 mb-2">Phone: {BUSINESS_PHONE_DISPLAY}</p>
             <p className="text-gray-300">Monday - Friday: 9am - 5pm</p>
           </div>
         </div>

@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import MainLayout from "@/layouts/MainLayout";
 import Seo from "@/components/Seo";
-import { buildMailtoLink, buildWhatsAppLink, BUSINESS_ADDRESS, BUSINESS_EMAIL } from "@/lib/business";
+import { buildMailtoLink, buildWhatsAppLink, BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE_DISPLAY } from "@/lib/business";
 import { MessageCircle } from "lucide-react";
 
 const formSchema = z.object({
@@ -202,14 +202,14 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-medium text-brand-charcoal mb-2">Customer Service</h3>
                   <p className="text-gray-600 mb-1">Email: {BUSINESS_EMAIL}</p>
-                  <p className="text-gray-600 mb-1">Phone: +44 7350 405313</p>
+                  <p className="text-gray-600 mb-1">Phone: {BUSINESS_PHONE_DISPLAY}</p>
                   <p className="text-gray-600">Hours: Monday to Friday, 9am - 5pm</p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-medium text-brand-charcoal mb-2">Sales Enquiries</h3>
                   <p className="text-gray-600 mb-1">Email: {BUSINESS_EMAIL}</p>
-                  <p className="text-gray-600">Phone: +44 7350 405313</p>
+                  <p className="text-gray-600">Phone: {BUSINESS_PHONE_DISPLAY}</p>
                 </div>
               </div>
             </div>
